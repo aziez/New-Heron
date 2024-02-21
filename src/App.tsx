@@ -21,6 +21,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import { Selection } from "./pages/Selection/Selection";
 
 setupIonicReact();
 
@@ -33,6 +34,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
+        </Route>
+        <Route exact path="/selection">
+          <Selection />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

@@ -7,28 +7,13 @@ import {
 } from "@ionic/react";
 import ExploreContainer from "../../components/ExploreContainer";
 import "./Home.css";
-import Heading from "../../components/Heading/Heading";
-import styled from "@emotion/styled";
+import MainPages from "../../components/Pages/Page";
 
 const Home: React.FC = () => {
-  const Content = styled(IonContent)(
-    `
-  --background: rgb(32,32,32) url('gate-l_new.jpg') no-repeat center center / cover;
-  `,
-    {
-      position: "absolute",
-      overflow: "hidden",
-      height: "100vh",
-      width: "100vw",
-    }
-  );
   return (
-    <IonPage>
-      <Heading />
-      <Content fullscreen>
-        <ExploreContainer />
-      </Content>
-    </IonPage>
+    <MainPages backgroundUrl="gate-l_new.jpg">
+      <ExploreContainer />
+    </MainPages>
   );
 };
 
