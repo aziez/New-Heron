@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
-import { IonImg, useIonRouter } from "@ionic/react";
+import { IonButton, IonImg, IonMenuToggle, useIonRouter } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface ContainerProps {}
 
 const ExploreContainer: React.FC<ContainerProps> = () => {
-  const router = useIonRouter(); 
+  const router = useIonRouter();
 
   const Main = styled.div({
     position: "relative",
@@ -24,10 +24,13 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
     zIndex: 1,
   });
 
-
   return (
     <Main>
-      <EnterButton src="00enter.png" onClick={() => router.push('/selection')} />
+      <EnterButton
+        src="00enter.png"
+        onClick={() => router.push("/selection")}
+      />
+      {/* <ColorButton /> */}
     </Main>
   );
 };

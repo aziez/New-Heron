@@ -10,7 +10,7 @@ const MotionCol = styled(motion(IonCol))({
   justifyContent: "center",
   alignItems: "center",
   height: "100%",
-//   border: "1px solid red",
+  //   border: "1px solid red",
 });
 
 const Images = styled(IonImg)({
