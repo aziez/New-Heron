@@ -2,7 +2,6 @@
 import styled from "@emotion/styled";
 import { IonButton, IonLabel, IonMenu } from "@ionic/react";
 import * as React from "react";
-import { css } from "@emotion/react";
 
 import "./style.css";
 

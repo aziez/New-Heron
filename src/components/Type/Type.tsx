@@ -1,11 +1,12 @@
 import React from "react";
+import FullScreenHtmlEmbed from "../Embbed/Embbed";
 
 type Props = {};
 
 function Type(props: Props) {
   return (
     <div>
-      <h1>This Type Component</h1>
+      <FullScreenHtmlEmbed htmlFile="google.com" />
     </div>
   );
 }

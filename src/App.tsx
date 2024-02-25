@@ -22,6 +22,9 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import { Selection } from "./pages/Selection/Selection";
+import Type9 from "./pages/Type/Type9";
+import Type11 from "./pages/Type/Type11";
+import Type11H from "./pages/Type/Type11H";
 
 setupIonicReact();
 
@@ -37,6 +40,15 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/selection">
           <Selection />
+        </Route>
+        <Route exact path="/type/type9">
+          <Type9 />
+        </Route>
+        <Route exact path="/type/type11">
+          <Type11 />
+        </Route>
+        <Route exact path="/type/type11h">
+          <Type11H />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

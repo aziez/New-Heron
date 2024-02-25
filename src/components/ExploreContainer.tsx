@@ -30,7 +30,6 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
         src="00enter.png"
         onClick={() => router.push("/selection")}
       />
-      {/* <ColorButton /> */}
     </Main>
   );
 };

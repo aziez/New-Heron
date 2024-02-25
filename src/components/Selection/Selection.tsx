@@ -1,66 +1,42 @@
 import styled from "@emotion/styled";
-import { IonCol, IonGrid, IonImg, IonRow } from "@ionic/react";
-import { FC } from "react";
-import { motion } from "framer-motion";
+import { IonGrid, IonRow } from "@ionic/react";
+import React, { FC, useEffect } from "react";
+import { CSSObject } from "@emotion/react";
+import useDisableBodyScroll from "../../utils/useDisabledScrolled"; // Assuming you put the hook in a separate file
 
-interface ISelectionProps {}
+interface ISelectionProps {
+  children: React.ReactNode;
+}
 
-const MotionCol = styled(motion(IonCol))({
+const Cover = styled.div({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "100%",
-  //   border: "1px solid red",
+  height: "100vh",
+  width: "100vw",
+  overflow: "hidden", // Added overflow: hidden
 });
 
-const Images = styled(IonImg)({
-  width: "60%",
-  height: "auto",
+const CenteredGrid = styled(IonGrid)({
+  textAlign: "center",
+  width: "100vw",
+  height: "100vh",
 });
 
-export const SelectionComponent: FC<ISelectionProps> = (props) => {
-  const Cover = styled.div({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-    // backgroundColor: "gray",
-  });
+const CenteredRow = styled(IonRow)({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100vh",
+});
 
-  const CenteredGrid = styled(IonGrid)({
-    // backgroundColor: "cyan",
-    textAlign: "center",
-    width: "100vw",
-    height: "100vh",
-  });
-
-  const CenteredRow = styled(IonRow)({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-    // backgroundColor: "blue",
-    // border: "1px solid black",
-  });
-
-  const handleHover = {
-    scale: 1.1,
-  };
+export const SelectionComponent: FC<ISelectionProps> = ({ children }) => {
+  useDisableBodyScroll(); // Apply the disable body scroll effect
 
   return (
     <Cover>
-      <CenteredGrid fixed>
-        <CenteredRow>
-          <MotionCol size="4" whileHover={handleHover}>
-            <Images src="T9.png" />
-          </MotionCol>
-          <MotionCol size="4" whileHover={handleHover}>
-            <Images src="T9.png" />
-          </MotionCol>
-          <MotionCol size="4" whileHover={handleHover}>
-            <Images src="T9.png" />
-          </MotionCol>
-        </CenteredRow>
+      <CenteredGrid>
+        <CenteredRow>{children}</CenteredRow>
       </CenteredGrid>
     </Cover>
   );

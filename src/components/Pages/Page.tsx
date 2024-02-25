@@ -6,7 +6,7 @@ import { ColorMenu } from "../Color/ColorMenu";
 
 interface MainPagesProps {
   children: ReactNode;
-  backgroundUrl: string;
+  backgroundUrl?: string;
 }
 
 const MainPages: FC<MainPagesProps> = ({ children, backgroundUrl }) => {
