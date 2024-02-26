@@ -31,8 +31,7 @@ const CenteredRow = styled(IonRow)({
 });
 
 export const SelectionComponent: FC<ISelectionProps> = ({ children }) => {
-  useDisableBodyScroll(); // Apply the disable body scroll effect
-
+  useDisableBodyScroll(); 
   return (
     <Cover>
       <CenteredGrid>

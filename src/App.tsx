@@ -25,6 +25,7 @@ import { Selection } from "./pages/Selection/Selection";
 import Type9 from "./pages/Type/Type9";
 import Type11 from "./pages/Type/Type11";
 import Type11H from "./pages/Type/Type11H";
+import Denah9 from "./pages/Denah/Denah9";
 
 setupIonicReact();
 
@@ -49,6 +50,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/type/type11h">
           <Type11H />
+        </Route>
+        <Route exact path="/denah/denah9">
+          <Denah9 />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

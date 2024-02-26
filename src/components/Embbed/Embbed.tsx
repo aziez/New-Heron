@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import useDisableBodyScroll from "../../utils/useDisabledScrolled"; // Assuming you put the hook in a separate file
+import { PotonganMenu } from '../PotonganMenu/PotonganMenu';
+
 
 
 interface IFullScreenHtmlEmbedProps {
@@ -10,6 +12,8 @@ interface IFullScreenHtmlEmbedProps {
 const FullScreenHtmlEmbedWrapper = styled.div`
   width: 100%;
   height: 100%;
+  overflow: hidden;
+
 `;
 
 const IframeContainer = styled.iframe`
@@ -22,6 +26,7 @@ const FullScreenHtmlEmbed: React.FC<IFullScreenHtmlEmbedProps> = ({ htmlFile }) 
     useDisableBodyScroll();
   return (
     <FullScreenHtmlEmbedWrapper>
+    <PotonganMenu />
       <IframeContainer
         src={htmlFile}
         title="Embedded HTML"

@@ -1,7 +1,3 @@
-// Garden Gnome Software - Skin
-// Object2VR 3.1.9/10783
-// Filename: default_loading_center.ggsk
-// Generated Sun 25. Feb 14:10:46 2024
 
 function object2vrSkin(player,base) {
 	var me=this;
@@ -88,6 +84,26 @@ function object2vrSkin(player,base) {
 	}
 	
 	this.addSkin=function() {
+		var facade = parent.document.getElementById("facade").onclick = function(){
+			me.player.changeViewState("0",0.5);
+				  me.player.moveTo("30","4","200","0.5");
+		  }
+
+		  var skydeck = parent.document.getElementById("skydeck").onclick = function(){
+			me.player.changeViewState("1",0.5);
+			me.player.moveTo("30","4","200","0.5");
+		}
+
+		  var dua = parent.document.getElementById("2nd").onclick = function(){
+			me.player.changeViewState("2",0.5);
+			me.player.moveTo("30","4","200","0.5");
+		}
+
+		  var satu = parent.document.getElementById("1st").onclick = function(){
+			me.player.changeViewState("3",0.5);
+			me.player.moveTo("30","4","200","0.5");
+		}
+
 		this._loading_text=document.createElement('div');
 		this._loading_text__text=document.createElement('div');
 		this._loading_text.className='ggskin ggskin_textdiv';

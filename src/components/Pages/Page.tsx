@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 import { IonContent, IonPage } from "@ionic/react";
 import { FC, ReactNode } from "react";
 import Heading from "../Heading/Heading";
-import { ColorMenu } from "../Color/ColorMenu";
-
 interface MainPagesProps {
   children: ReactNode;
   backgroundUrl?: string;
@@ -21,7 +19,6 @@ const MainPages: FC<MainPagesProps> = ({ children, backgroundUrl }) => {
 
   return (
     <>
-      <ColorMenu />
       <IonPage id="color-content">
         <Heading />
         <Content fullscreen>{children}</Content>
