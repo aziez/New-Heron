@@ -11,7 +11,7 @@ import MainPages from "../../components/Pages/Page";
 
 const Home: React.FC = () => {
   return (
-    <MainPages backgroundUrl="gate-l_new.jpg">
+    <MainPages backgroundUrl="gate.jpg">
       <ExploreContainer />
     </MainPages>
   );

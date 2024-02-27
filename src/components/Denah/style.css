@@ -1,63 +1,74 @@
 .segment {
-    display: block;
-    height: 70%;
-  
-  }
-  
-  .segment-btn {
-    width: 7em;
-    min-height: 9px;
-    --background: transparant !important;
-    --color: var(--ion-color-secondary);
-    --color-checked: var(--ion-color-secondary-contrast);
-    --background-checked: var(--ion-color-light);
-    --indicator-box-shadow: var(--ion-color-primary);
-    border: 1px solid var(--ion-color-light);
-    --border-radius: 5px;
-  
-  }
-  
-  .label {
-    height: 9px;
-    font-size: 7px;
-  }
-  
-  .slides {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff00;
-  }
-  
-  .slide {
-    max-width: 100% !important;
-    max-height: 100% !important;
-    background-color: #ffffff00;
-  }
-  
-  .zoom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-  }
-  
-  .ket {
-    margin-top: 0px;
-    /* max-width: 60% !important; */
-    width: 50%;
-    height: 60%;
-  }
-  
-  
-  .bawah {
-    height: 80vh !important;
-    width: 35vh !important;
-    align-items: left;
-    position: absolute;
-    left: 0;
-    right: 85%;
-    margin: 0 auto;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  display: block;
+  /* height: 70%; */
+  margin: 4px;
+  padding: 4px;
+}
+
+.segment-btn {
+  /* width: 7em; */
+  min-height: 9px;
+  --background: transparant !important;
+  --color: var(--ion-color-secondary);
+  --color-checked: var(--ion-color-secondary-contrast);
+  --background-checked: var(--ion-color-light);
+  --indicator-box-shadow: var(--ion-color-primary);
+  border: 1px solid var(--ion-color-light);
+  --border-radius: 5px;
+
+}
+
+.label {
+  height: 9px;
+  font-size: 7px;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff00;
+}
+
+.slide {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  background-color: #ffffff00;
+}
+
+
+.wrapper {
+  position: absolute;
+}
+
+.zoom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.ket {
+  margin-top: 0px;
+  max-width: 60% !important;
+  /* background-color: aqua; */
+  /* width: 100%; */
+  height: auto;
+}
+
+
+.bawah {
+  height: 100vh !important;
+  width: 35vh !important;
+  align-items: left;
+  position: absolute;
+  background-color: aqua;
+  left: 0;
+  right: 85%;
+  margin: 0 auto;
+  /* top: 60%; */
+  /* transform: translateY(-50%); */
+}

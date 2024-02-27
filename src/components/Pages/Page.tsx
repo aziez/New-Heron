@@ -9,8 +9,8 @@ interface MainPagesProps {
 
 const MainPages: FC<MainPagesProps> = ({ children, backgroundUrl }) => {
   const Content = styled(IonContent)`
-    --background: rgb(32, 32, 32) url(${backgroundUrl}) no-repeat center center /
-      cover;
+    ${backgroundUrl &&
+    `--background: rgb(32, 32, 32) url(${backgroundUrl}) no-repeat center center / cover;`}
     position: absolute;
     overflow: hidden;
     height: 100vh;
