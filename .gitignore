@@ -2,8 +2,7 @@
 
 # dependencies
 /node_modules
-/public/T11
-/public/T11S
+
 /.pnp
 .pnp.js
 

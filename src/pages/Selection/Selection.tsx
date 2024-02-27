@@ -8,9 +8,9 @@ export const Selection: FC<ISelectionProps> = (props) => {
   return (
     <MainPages backgroundUrl="selection.jpg">
       <SelectionComponent>
-        <SelectionCol url="/type/type9" images="T9.png" />
-        <SelectionCol url="/type/type11" images="T11.png" />
-        <SelectionCol url="/type/type11h" images="T11s.png" />
+        <SelectionCol url="/type9" images="T9.png" />
+        <SelectionCol url="/type11" images="T11.png" />
+        <SelectionCol url="/type11s" images="T11s.png" />
       </SelectionComponent>
     </MainPages>
   );

@@ -24,8 +24,13 @@ import "./theme/variables.css";
 import { Selection } from "./pages/Selection/Selection";
 import Type9 from "./pages/Type/Type9";
 import Type11 from "./pages/Type/Type11";
-import Type11H from "./pages/Type/Type11H";
+import Type11H from "./pages/Type/Type11s";
 import Denah9 from "./pages/Denah/Denah9";
+import Denah11 from "./pages/Denah/Denah11";
+import Denah11s from "./pages/Denah/Denah11s";
+import Potongan9 from "./pages/Selection/Potongan9";
+import Potongan11 from "./pages/Selection/Potongan11";
+import Potongan11S from "./pages/Selection/Potongan11s";
 
 setupIonicReact();
 
@@ -42,17 +47,32 @@ const App: React.FC = () => (
         <Route exact path="/selection">
           <Selection />
         </Route>
+        <Route exact path="/type9">
+          <Potongan9 />
+        </Route>
+        <Route exact path="/type11">
+          <Potongan11 />
+        </Route>
+        <Route exact path="/type11s">
+          <Potongan11S />
+        </Route>
         <Route exact path="/type/type9">
           <Type9 />
         </Route>
         <Route exact path="/type/type11">
           <Type11 />
         </Route>
-        <Route exact path="/type/type11h">
+        <Route exact path="/type/type11s">
           <Type11H />
         </Route>
         <Route exact path="/denah/denah9">
           <Denah9 />
+        </Route>
+        <Route exact path={"/denah/denah11"}>
+          <Denah11 />
+        </Route>
+        <Route exact path={"/denah/denah11s"}>
+          <Denah11s />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

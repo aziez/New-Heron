@@ -23,10 +23,9 @@ const IframeContainer = styled.iframe`
 `;
 
 const FullScreenHtmlEmbed: React.FC<IFullScreenHtmlEmbedProps> = ({ htmlFile }) => {
-    useDisableBodyScroll();
+  useDisableBodyScroll();
   return (
     <FullScreenHtmlEmbedWrapper>
-    <PotonganMenu />
       <IframeContainer
         src={htmlFile}
         title="Embedded HTML"

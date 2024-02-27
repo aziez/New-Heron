@@ -27,12 +27,13 @@ interface Props {
 const DenahControl: FC<Props> = ({ dataArray }) => {
   const swiper = useSwiper();
 
+  
   const handleSegmentChange = (event: CustomEvent) => {
     const segmentValue = event.detail.value;
     const slideIndex = parseInt(segmentValue);
-
-    console.log("DATAA", slideIndex);
+    swiper.enable()
     swiper.slideTo(slideIndex);
+    swiper.disable()
   };
 
   return (
@@ -62,37 +63,28 @@ const DenahControl: FC<Props> = ({ dataArray }) => {
 const Denah: FC<Props> = ({ dataArray }) => {
   return (
     <Swiper
-      pagination={{
-        type: "progressbar",
-      }}
-      navigation={true}
-      modules={[Pagination, Navigation]}
       className="slides"
-      grabCursor={true}
-      effect={"creative"}
-      creativeEffect={{
-        prev: {
-          shadow: true,
-          translate: ["-120%", 0, -500],
-        },
-        next: {
-          shadow: true,
+      effect={"fade"}
+      pagination={{ type: "progressbar" }}
+      modules={[Navigation, Pagination]}
+      onSwiper={(swiper: any) => swiper.disable()}
+      onSlideChange={() => console.log('slide change')}
+    //   onSlideChange={() => {/*...*/}}
+    
 
-          translate: ["120%", 0, -500],
-        },
-      }}
     >
       <DenahControl dataArray={dataArray} />
       {dataArray.map((data) => (
         <SwiperSlide key={data.id} className="slide">
-          <TransformWrapper initialScale={1} maxScale={2}>
+          <TransformWrapper initialScale={1.2} maxScale={2}>
             <TransformComponent>
               <div className="zoom">
                 <IonImg className="ket" src={data.url} alt={data.nama} />
               </div>
             </TransformComponent>
           </TransformWrapper>
-          <div className="bawah">
+          <div className="bawah"   data-swiper-parallax="-300"
+        data-swiper-parallax-duration="600">
             <IonImg src={data.ket} alt={data.nama} />
           </div>
         </SwiperSlide>
