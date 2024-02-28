@@ -52,6 +52,9 @@
     "vitest": "^0.34.6"
   },
   "description": "An Ionic project",
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
+  },
 
   "resolutions": {
     "rollup": "npm:@rollup/wasm-node"
