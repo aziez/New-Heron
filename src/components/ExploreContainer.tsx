@@ -61,7 +61,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
           <ColStyle size="auto">
             <div
               style={{
-                width: "250px",
+                width: "500px",
                 height: "100vh",
                 position: "relative",
                 // backgroundColor: "red",
@@ -73,7 +73,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
                   bottom: "0",
                   left: "50%",
                   // backgroundColor: "red",
-                  height: "120px",
+                  height: "300px",
                   width: "100vh",
                   transform: "translateX(-50%)",
                 }}
