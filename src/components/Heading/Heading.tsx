@@ -38,7 +38,7 @@ function Heading(props: Props) {
     <>
     <StyledToolbar className="toolbar">
       <StyledImg slot="start" className="logo" src="ss.png" />
-      <StyledImg slot="end" className="logo" src="heron.png" />
+      <StyledImg slot="end" className="logo" src="ardea.png" />
     </StyledToolbar>
       {path !== "/home" && 
     <IonFab onClick={handleBack} vertical="bottom" horizontal="start" slot="fixed">
