@@ -18,7 +18,7 @@ interface FablistProps {
 }
 
 const GrayIonIcon = styled(IonIcon)`
-  color: black;
+  color: white;
 `;
 
 const FabList: React.FC<FablistProps> = ({ kisi, denah }) => {
@@ -29,7 +29,7 @@ const FabList: React.FC<FablistProps> = ({ kisi, denah }) => {
       </IonFabButton>
       <IonFabList side="top">
         <IonFabButton routerLink={denah}>
-          <IonImg src="plan.png" />
+          <GrayIonIcon src="plan.svg" />
         </IonFabButton>
       </IonFabList>
       <IonFabList side="start">
