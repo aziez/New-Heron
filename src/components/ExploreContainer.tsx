@@ -76,7 +76,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
                   position: "absolute",
                   bottom: "0",
                   left: "50%",
-                  height: "300px",
+                  height: "100vh",
                   width: "100vh",
                   transform: "translateX(-50%)",
                   cursor: "pointer",
