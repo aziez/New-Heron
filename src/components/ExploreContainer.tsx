@@ -1,21 +1,38 @@
 import styled from "@emotion/styled";
-import {
-  IonButton,
-  IonCol,
-  IonGrid,
-  IonImg,
-  IonRow,
-  useIonRouter,
-} from "@ionic/react";
+import { IonCol, IonGrid, IonRow, useIonRouter } from "@ionic/react";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 interface ContainerProps {}
 
 const ExploreContainer: React.FC<ContainerProps> = () => {
   const router = useIonRouter();
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const controls = useAnimation();
+  const audio = new Audio("audio.mp3");
 
-  const Main = styled.div({
+  const toggleFullscreen = async () => {
+    if (document.fullscreenElement) {
+      await document.exitFullscreen();
+      setIsFullscreen(false);
+      audio.pause();
+    } else {
+      await document.documentElement.requestFullscreen();
+      setIsFullscreen(true);
+      controls.start({ opacity: 0 });
+      audio.loop = true;
+      audio.volume = 0.15;
+      if (audio.paused) {
+        audio.play();
+      }
+    }
+
+    setTimeout(() => {
+      router.push("/selection");
+    }, 1000);
+  };
+
+  const Main = styled(motion.div)({
     position: "relative",
     textAlign: "center",
     width: "100vw",
@@ -25,11 +42,10 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
 
   const GridWrapper = styled(IonGrid)({
     height: "100%",
-    // backgroundColor: "black", // Make IonGrid full height
   });
 
   const RowWrapper = styled(IonRow)({
-    height: "100%", // Make IonRow full height
+    height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
@@ -41,21 +57,10 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
     justifyContent: "center",
     textAlign: "center",
     color: "#fff",
-    // border: "solid 1px black",
-    // backgroundColor: "red",
-  });
-
-  const EnterButton = styled(IonImg)({
-    // maxWidth: "15%",
-    // position: "absolute",
-    // bottom: "1rem", // Adjust the distance from the bottom as needed
-    // left: "50%",
-    // transform: "translateX(-50%)",
-    zIndex: 1,
   });
 
   return (
-    <Main>
+    <Main animate={controls} initial={{ opacity: 1 }}>
       <GridWrapper>
         <RowWrapper>
           <ColStyle size="auto">
@@ -64,23 +69,23 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
                 width: "500px",
                 height: "100vh",
                 position: "relative",
-                // backgroundColor: "red",
               }}
             >
-              <div
+              <motion.div
                 style={{
                   position: "absolute",
                   bottom: "0",
                   left: "50%",
-                  // backgroundColor: "red",
                   height: "300px",
                   width: "100vh",
                   transform: "translateX(-50%)",
+                  cursor: "pointer",
                 }}
                 onClick={() => {
-                  router.push("/selection");
+                  toggleFullscreen();
                 }}
-              ></div>
+                whileTap={{ scale: 0.9 }}
+              ></motion.div>
             </div>
           </ColStyle>
           <ColStyle></ColStyle>

@@ -6,11 +6,11 @@ interface ISelectionProps {}
 
 export const Selection: FC<ISelectionProps> = (props) => {
   return (
-    <MainPages backgroundUrl="selection.jpg">
+    <MainPages backgroundUrl="bg_marble.jpg">
       <SelectionComponent>
-        <SelectionCol url="/type9" images="T9.png" />
-        <SelectionCol url="/type11" images="T11.png" />
-        <SelectionCol url="/type11s" images="T11s.png" />
+        <SelectionCol url="/type11s" images="ardea_11_hoek.png" />
+        <SelectionCol url="/type11" images="ardea_11.png" />
+        <SelectionCol url="/type9" images="ardea_9.png" />
       </SelectionComponent>
     </MainPages>
   );

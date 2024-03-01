@@ -18,14 +18,14 @@ interface FablistProps {
 }
 
 const GrayIonIcon = styled(IonIcon)`
-  color: white;
+  color: black;
 `;
 
 const FabList: React.FC<FablistProps> = ({ kisi, denah }) => {
   return (
     <IonFab vertical="bottom" horizontal="end" slot="fixed">
       <IonFabButton size="small">
-        <GrayIonIcon icon={menu} />
+        <IonIcon icon={menu} />
       </IonFabButton>
       <IonFabList side="top">
         <IonFabButton routerLink={denah}>

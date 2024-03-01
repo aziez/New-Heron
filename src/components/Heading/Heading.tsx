@@ -1,7 +1,14 @@
-import { IonFab, IonFabButton, IonIcon, IonImg, IonToolbar, useIonRouter } from "@ionic/react";
+import {
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonImg,
+  IonToolbar,
+  useIonRouter,
+} from "@ionic/react";
 import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
-import {chevronBack} from "ionicons/icons"
+import { chevronBack } from "ionicons/icons";
 
 interface Props {}
 
@@ -12,7 +19,7 @@ function Heading(props: Props) {
 
   useEffect(() => {
     setPath(router.routeInfo.pathname);
-  },[])
+  }, []);
 
   const StyledToolbar = styled(IonToolbar)`
     position: sticky;
@@ -32,21 +39,26 @@ function Heading(props: Props) {
 
   const handleBack = () => {
     router.goBack();
-  }
+  };
 
   return (
     <>
-    <StyledToolbar className="toolbar">
-      <StyledImg slot="start" className="logo" src="ss.png" />
-      <StyledImg slot="end" className="logo" src="ardea.png" />
-    </StyledToolbar>
-      {path !== "/home" && 
-    <IonFab onClick={handleBack} vertical="bottom" horizontal="start" slot="fixed">
-      <IonFabButton size="small">
-      <IonIcon icon={chevronBack} />
-      </IonFabButton>
-      </IonFab>
-      }
+      <StyledToolbar className="toolbar">
+        <StyledImg slot="start" className="logo" src="ss.png" />
+        <StyledImg slot="end" className="logo" src="ardea.png" />
+      </StyledToolbar>
+      {path !== "/home" && path !== "/selection" && (
+        <IonFab
+          onClick={handleBack}
+          vertical="bottom"
+          horizontal="start"
+          slot="fixed"
+        >
+          <IonFabButton size="small">
+            <IonIcon icon={chevronBack} />
+          </IonFabButton>
+        </IonFab>
+      )}
     </>
   );
 }

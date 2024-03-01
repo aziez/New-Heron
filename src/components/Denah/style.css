@@ -7,14 +7,13 @@
 
 .segment-btn {
   /* width: 7em; */
-  min-height: 9px;
+  /* min-height: 10px; */
   --background: transparant !important;
-  --color: var(--ion-color-secondary);
-  --color-checked: var(--ion-color-secondary-contrast);
+  --color: black;
+  --color-checked: white;
   --background-checked: var(--ion-color-light);
   --indicator-box-shadow: var(--ion-color-primary);
-  border: 1px solid var(--ion-color-light);
-  --border-radius: 5px;
+
 
 }
 
@@ -22,6 +21,8 @@
   height: 9px;
   font-size: 7px;
 }
+
+
 
 .slides {
   position: relative;
@@ -61,14 +62,16 @@
 
 
 .bawah {
-    height: 100vh;
-    width: 35vh;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: flex-start; /* Align content to the start (left) */
-    position: absolute;
-    background-color: #BAB1A0;
-    left: 0;
-    right: 85%;
-    margin: 0 auto;
+  height: 100vh;
+  width: 35vh;
+  display: flex;
+  align-items: center;
+  /* Center vertically */
+  justify-content: flex-start;
+  /* Align content to the start (left) */
+  position: absolute;
+  background-color: #BAB1A0;
+  left: 0;
+  right: 85%;
+  margin: 0 auto;
 }

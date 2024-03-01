@@ -27,13 +27,12 @@ interface Props {
 const DenahControl: FC<Props> = ({ dataArray }) => {
   const swiper = useSwiper();
 
-  
   const handleSegmentChange = (event: CustomEvent) => {
     const segmentValue = event.detail.value;
     const slideIndex = parseInt(segmentValue);
-    swiper.enable()
+    swiper.enable();
     swiper.slideTo(slideIndex);
-    swiper.disable()
+    swiper.disable();
   };
 
   return (
@@ -51,7 +50,7 @@ const DenahControl: FC<Props> = ({ dataArray }) => {
               key={data.id}
               value={data.id}
             >
-              <IonLabel>{data.nama}</IonLabel>
+              {data.nama}
             </IonSegmentButton>
           ))}
         </IonSegment>
@@ -68,10 +67,8 @@ const Denah: FC<Props> = ({ dataArray }) => {
       pagination={{ type: "progressbar" }}
       modules={[Navigation, Pagination]}
       onSwiper={(swiper: any) => swiper.disable()}
-      onSlideChange={() => console.log('slide change')}
-    //   onSlideChange={() => {/*...*/}}
-    
-
+      onSlideChange={() => console.log("slide change")}
+      //   onSlideChange={() => {/*...*/}}
     >
       <DenahControl dataArray={dataArray} />
       {dataArray.map((data) => (
@@ -83,8 +80,11 @@ const Denah: FC<Props> = ({ dataArray }) => {
               </div>
             </TransformComponent>
           </TransformWrapper>
-          <div className="bawah"   data-swiper-parallax="-300"
-        data-swiper-parallax-duration="600">
+          <div
+            className="bawah"
+            data-swiper-parallax="-300"
+            data-swiper-parallax-duration="600"
+          >
             <IonImg src={data.ket} alt={data.nama} />
           </div>
         </SwiperSlide>
