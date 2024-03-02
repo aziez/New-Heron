@@ -1,77 +1,84 @@
-.segment {
-  display: block;
-  /* height: 70%; */
-  margin: 4px;
-  padding: 4px;
-}
+  .segment {
+    display: block;
+    /* height: 70%; */
+    margin: 4px;
+    padding: 4px;
+  }
 
-.segment-btn {
-  /* width: 7em; */
-  /* min-height: 10px; */
-  --background: transparant !important;
-  --color: black;
-  --color-checked: white;
-  --background-checked: var(--ion-color-light);
-  --indicator-box-shadow: var(--ion-color-primary);
-
-
-}
-
-.label {
-  height: 9px;
-  font-size: 7px;
-}
+  .segment-btn {
+    /* width: 7em; */
+    /* min-height: 10px; */
+    --background: transparant !important;
+    --color: black;
+    --color-checked: white;
+    --background-checked: var(--ion-color-light);
+    --indicator-box-shadow: var(--ion-color-primary);
 
 
+  }
 
-.slides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff00;
-}
-
-.slide {
-  max-width: 100% !important;
-  max-height: 100% !important;
-  background-color: #ffffff00;
-}
+  .label {
+    height: 9px;
+    font-size: 7px;
+  }
 
 
-.wrapper {
-  position: absolute;
-}
 
-.zoom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #FFF9ED;
-  padding: 20px;
-  width: 100vw;
-  height: 100vh;
-}
+  .slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff00;
+  }
 
-.ket {
-  margin-top: 0px;
-  max-width: 60% !important;
-  /* background-color: aqua; */
-  /* width: 100%; */
-  height: auto;
-}
+  .slide {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    background-color: #ffffff00;
+  }
 
 
-.bawah {
-  height: 100vh;
-  width: 35vh;
-  display: flex;
-  align-items: center;
-  /* Center vertically */
-  justify-content: flex-start;
-  /* Align content to the start (left) */
-  position: absolute;
-  background-color: #BAB1A0;
-  left: 0;
-  right: 85%;
-  margin: 0 auto;
-}
+  .wrapper {
+    position: absolute;
+  }
+
+  .zoom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF9ED;
+    /* border: black solid 3px; */
+    /* background-color: red; */
+
+    /* padding: 20px; */
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .ket {
+    position: absolute;
+    top: 0;
+    /* left: 25%; */
+    margin-top: 10px;
+    /* margin-top: 0px; */
+    max-width: 50% !important;
+    /* background-color: aqua; */
+    /* width: 100%; */
+    height: auto;
+  }
+
+
+  .bawah {
+    height: 100vh;
+    width: 35vh;
+    display: flex;
+    align-items: center;
+    /* Center vertically */
+    justify-content: flex-start;
+    /* Align content to the start (left) */
+    position: absolute;
+    background-color: #BAB1A0;
+    left: 0;
+    right: 85%;
+    margin: 0 auto;
+  }

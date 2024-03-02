@@ -66,17 +66,21 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
           <ColStyle size="auto">
             <div
               style={{
-                width: "500px",
+                width: "calc(100vw - 60vw)",
                 height: "100vh",
-                position: "relative",
+                // backgroundColor: "red",
+                // position: "relative",
+                // backgroundColor: "red",
               }}
             >
               <motion.div
                 style={{
+                  // backgroundColor: "#fffff",
+                  // border: "5px solid blue",
                   position: "absolute",
                   bottom: "0",
                   left: "50%",
-                  height: "100vh",
+                  height: "50%",
                   width: "100vh",
                   transform: "translateX(-50%)",
                   cursor: "pointer",

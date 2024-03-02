@@ -19,6 +19,7 @@ interface FablistProps {
 
 const GrayIonIcon = styled(IonIcon)`
   color: black;
+  font-size: 25px;
 `;
 
 const FabList: React.FC<FablistProps> = ({ kisi, denah }) => {
