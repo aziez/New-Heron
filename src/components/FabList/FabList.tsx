@@ -30,7 +30,7 @@ const FabList: React.FC<FablistProps> = ({ kisi, denah }) => {
       </IonFabButton>
       <IonFabList side="top">
         <IonFabButton routerLink={denah}>
-          <GrayIonIcon src="plan.svg" />
+          <GrayIonIcon style={{ paddingTop: "7px" }} src="plan.svg" />
         </IonFabButton>
       </IonFabList>
       <IonFabList side="start">
