@@ -22,6 +22,7 @@ interface DataDenah {
 
 interface Props {
   dataArray: DataDenah[];
+  disclaimer?: boolean;
 }
 
 const DenahControl: FC<Props> = ({ dataArray }) => {
@@ -59,7 +60,7 @@ const DenahControl: FC<Props> = ({ dataArray }) => {
   );
 };
 
-const Denah: FC<Props> = ({ dataArray }) => {
+const Denah: FC<Props> = ({ dataArray, disclaimer = false }) => {
   return (
     <Swiper
       className="slides"
@@ -72,22 +73,29 @@ const Denah: FC<Props> = ({ dataArray }) => {
     >
       <DenahControl dataArray={dataArray} />
       {dataArray.map((data) => (
-        <SwiperSlide key={data.id} className="slide">
-          <TransformWrapper initialScale={1.2} maxScale={2}>
-            <TransformComponent>
-              <div className="zoom">
-                <IonImg className="ket" src={data.url} alt={data.nama} />
+        <>
+          <SwiperSlide key={data.id} className="slide">
+            <TransformWrapper initialScale={1.2} maxScale={2}>
+              <TransformComponent>
+                <div className="zoom">
+                  <IonImg className="ket" src={data.url} alt={data.nama} />
+                </div>
+              </TransformComponent>
+            </TransformWrapper>
+            <div
+              className="bawah"
+              data-swiper-parallax="-300"
+              data-swiper-parallax-duration="600"
+            >
+              <IonImg src={data.ket} alt={data.nama} />
+            </div>
+            {disclaimer && (
+              <div className="info">
+                <IonImg src="disclaimer.png" alt={data.nama} />
               </div>
-            </TransformComponent>
-          </TransformWrapper>
-          <div
-            className="bawah"
-            data-swiper-parallax="-300"
-            data-swiper-parallax-duration="600"
-          >
-            <IonImg src={data.ket} alt={data.nama} />
-          </div>
-        </SwiperSlide>
+            )}
+          </SwiperSlide>
+        </>
       ))}
     </Swiper>
   );

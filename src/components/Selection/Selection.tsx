@@ -3,6 +3,7 @@ import { IonGrid, IonRow } from "@ionic/react";
 import React, { FC, useEffect } from "react";
 import { CSSObject } from "@emotion/react";
 import useDisableBodyScroll from "../../utils/useDisabledScrolled"; // Assuming you put the hook in a separate file
+import Disclaimer from "../Disclaimer/Disclaimer";
 
 interface ISelectionProps {
   children: React.ReactNode;
@@ -27,16 +28,17 @@ const CenteredRow = styled(IonRow)({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "100vh",
+  height: "90vh",
 });
 
 export const SelectionComponent: FC<ISelectionProps> = ({ children }) => {
-  useDisableBodyScroll(); 
+  useDisableBodyScroll();
   return (
     <Cover>
       <CenteredGrid>
         <CenteredRow>{children}</CenteredRow>
       </CenteredGrid>
+      <Disclaimer />
     </Cover>
   );
 };

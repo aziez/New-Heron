@@ -33,6 +33,7 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-success-contrast: #ffffff;
   --ion-color-success-contrast-rgb: 0, 0, 0;
   --ion-color-success-shade: #c09137;
+  /* --ion-color-success-shade: #c0903797; */
   --ion-color-success-tint: #deae52;
 
   /** warning **/

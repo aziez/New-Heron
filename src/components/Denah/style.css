@@ -82,3 +82,14 @@
     right: 85%;
     margin: 0 auto;
   }
+
+  .info {
+    position: fixed;
+    bottom: 10px;
+    left: calc(35vh + 10px);
+
+    /* transform: translateX(-50%); */
+    width: 25%;
+    padding: 10px;
+    text-align: center;
+  }

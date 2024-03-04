@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { IonCol, IonGrid, IonRow, useIonRouter } from "@ionic/react";
+import { IonAlert, IonCol, IonGrid, IonRow, useIonRouter } from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -10,6 +10,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const controls = useAnimation();
   const audio = new Audio("audio.mp3");
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleFullscreen = async () => {
     if (document.fullscreenElement) {
@@ -26,11 +27,16 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
         audio.play();
       }
     }
-
-    setTimeout(() => {
-      router.push("/selection");
-    }, 1000);
   };
+
+  useEffect(() => {
+    if (!isFullscreen) {
+      setIsOpen(true);
+    } else {
+      // Close the alert if isFullscreen is true
+      setIsOpen(false);
+    }
+  }, [isFullscreen]);
 
   const Main = styled(motion.div)({
     position: "relative",
@@ -59,8 +65,27 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
     color: "#fff",
   });
 
+  const StyledAlert = styled(IonAlert)(`
+    --backdrop-opacity: 80%;
+    --background: var(--ion-color-success)
+
+  `);
+
   return (
     <Main animate={controls} initial={{ opacity: 1 }}>
+      <StyledAlert
+        mode="ios"
+        isOpen={isOpen}
+        header="Change screen"
+        buttons={[
+          {
+            text: "Fullscreen",
+            role: "confirm",
+            handler: () => (toggleFullscreen(), setIsOpen(false)),
+          },
+        ]}
+        onDidDismiss={() => (toggleFullscreen(), setIsOpen(false))}
+      />
       <GridWrapper>
         <RowWrapper>
           <ColStyle size="auto">
@@ -68,15 +93,10 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
               style={{
                 width: "calc(100vw - 60vw)",
                 height: "100vh",
-                // backgroundColor: "red",
-                // position: "relative",
-                // backgroundColor: "red",
               }}
             >
               <motion.div
                 style={{
-                  // backgroundColor: "#fffff",
-                  // border: "5px solid blue",
                   position: "absolute",
                   bottom: "0",
                   left: "50%",
@@ -86,7 +106,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
                   cursor: "pointer",
                 }}
                 onClick={() => {
-                  toggleFullscreen();
+                  router.push("/selection");
                 }}
                 whileTap={{ scale: 0.9 }}
               ></motion.div>

@@ -1,5 +1,5 @@
 import { IonImg, IonRow, IonText } from "@ionic/react";
-import rotate from "../../../public/rotate.json";
+import rotate from "./rotate.json";
 import Lottie from "lottie-react";
 import "./Rotation.css";
 
