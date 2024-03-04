@@ -9,6 +9,12 @@ const Denah11s: React.FC = () => {
       url: "denah/L11X16_sudut.jpg",
       ket: "nav/L11X16_sudut_nav.jpg",
     },
+    {
+      id: "1",
+      nama: "L11X19 Sudut",
+      url: "denah/L11X19_sudut.jpg",
+      ket: "nav/L11X19_sudut_nav.jpg",
+    },
   ];
 
   return (

@@ -1,6 +1,6 @@
   .segment {
     display: block;
-    /* height: 70%; */
+    height: 70%;
     margin: 4px;
     padding: 4px;
   }
@@ -11,7 +11,7 @@
     --background: transparant !important;
     --color: black;
     --color-checked: white;
-    --background-checked: var(--ion-color-light);
+    /* --background-checked: var(--ion-color-light); */
     --indicator-box-shadow: var(--ion-color-primary);
 
 
