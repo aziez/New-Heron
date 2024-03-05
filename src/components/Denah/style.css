@@ -3,6 +3,7 @@
     height: 70%;
     margin: 4px;
     padding: 4px;
+    --background: transparant !important;
   }
 
   .segment-btn {

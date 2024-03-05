@@ -1,5 +1,12 @@
 import styled from "@emotion/styled";
-import { IonAlert, IonCol, IonGrid, IonRow, useIonRouter } from "@ionic/react";
+import {
+  IonAlert,
+  IonCol,
+  IonGrid,
+  IonImg,
+  IonRow,
+  useIonRouter,
+} from "@ionic/react";
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -33,7 +40,6 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
     if (!isFullscreen) {
       setIsOpen(true);
     } else {
-      // Close the alert if isFullscreen is true
       setIsOpen(false);
     }
   }, [isFullscreen]);
@@ -65,6 +71,28 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
     color: "#fff",
   });
 
+  const ImgContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+  `;
+
+  const CenterBottomImg = styled(motion(IonImg))`
+    width: 30%;
+    align-self: end;
+    margin-bottom: 10%; /* Add space on the bottom */
+    margin-left: 20%; /* Add space on the right */
+  `;
+
+  const kuponHoverAnimation = {
+    scale: 1.2,
+    transition: {
+      duration: 0.3,
+    },
+  };
+
   const StyledAlert = styled(IonAlert)(`
     --backdrop-opacity: 80%;
     --background: var(--ion-color-success)
@@ -93,23 +121,16 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
               style={{
                 width: "calc(100vw - 60vw)",
                 height: "100vh",
+                // backgroundColor: "red",
               }}
             >
-              <motion.div
-                style={{
-                  position: "absolute",
-                  bottom: "0",
-                  left: "50%",
-                  height: "50%",
-                  width: "100vh",
-                  transform: "translateX(-50%)",
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  router.push("/selection");
-                }}
-                whileTap={{ scale: 0.9 }}
-              ></motion.div>
+              <ImgContainer>
+                <CenterBottomImg
+                  whileHover={kuponHoverAnimation}
+                  src="icon/start.png"
+                  onClick={() => router.push("/selection")}
+                />
+              </ImgContainer>
             </div>
           </ColStyle>
           <ColStyle></ColStyle>
