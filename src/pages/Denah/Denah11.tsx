@@ -8,12 +8,14 @@ const Denah11: React.FC = () => {
       nama: "Ardea A",
       url: "denah/L11X19_badan.jpg",
       ket: "nav/L11X19_badan_nav.jpg",
+      info: "optional.png",
     },
     {
       id: "1",
       nama: "Ardea B",
       url: "denah/L11X16_badan.jpg",
       ket: "nav/L11X16_badan_nav.jpg",
+      info: "optional.png",
     },
   ];
 

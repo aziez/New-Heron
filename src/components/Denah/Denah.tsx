@@ -18,6 +18,7 @@ interface DataDenah {
   nama: string;
   url: string;
   ket: string;
+  info: string;
 }
 
 interface Props {
@@ -91,7 +92,7 @@ const Denah: FC<Props> = ({ dataArray, disclaimer = false }) => {
             </div>
             {disclaimer && (
               <div className="info">
-                <IonImg src="disclaimer.png" alt={data.nama} />
+                <IonImg src={data?.info} alt={data.nama} />
               </div>
             )}
           </SwiperSlide>

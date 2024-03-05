@@ -9,12 +9,15 @@ const Denah9: React.FC = () => {
       nama: "Ardea C",
       url: "denah/L9X19_badan.jpg",
       ket: "nav/L9X19_badan_nav.jpg",
+
+      info: "the_position.png",
     },
     {
       id: "1",
       nama: "Ardea D",
       url: "denah/L9X16_badan.jpg",
       ket: "nav/L9X16_badan_nav.jpg",
+      info: "the_position.png",
     },
   ];
 
