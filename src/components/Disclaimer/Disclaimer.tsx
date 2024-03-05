@@ -15,7 +15,7 @@ const StyledDisclaimer = styled.div`
 `;
 
 const StyledText = styled(IonText)({
-  fontSize: "9px",
+  fontSize: "10px",
   color: "#c0903797",
   textAlign: "center",
 });

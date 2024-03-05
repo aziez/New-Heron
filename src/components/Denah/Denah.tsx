@@ -76,7 +76,7 @@ const Denah: FC<Props> = ({ dataArray, disclaimer = false }) => {
       {dataArray.map((data) => (
         <>
           <SwiperSlide key={data.id} className="slide">
-            <TransformWrapper initialScale={1.2} maxScale={2}>
+            <TransformWrapper minScale={1.2} initialScale={1.2} maxScale={2.5}>
               <TransformComponent>
                 <div className="zoom">
                   <IonImg className="ket" src={data.url} alt={data.nama} />

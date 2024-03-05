@@ -93,6 +93,13 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
     },
   };
 
+  const kuponClickAnimation = {
+    rotate: 21,
+    transition: {
+      duration: 0.5,
+    },
+  };
+
   const StyledAlert = styled(IonAlert)(`
     --backdrop-opacity: 80%;
     --background: var(--ion-color-success)
@@ -127,6 +134,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
               <ImgContainer>
                 <CenterBottomImg
                   whileHover={kuponHoverAnimation}
+                  whileTap={kuponClickAnimation}
                   src="icon/start.png"
                   onClick={() => router.push("/selection")}
                 />
