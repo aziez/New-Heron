@@ -19,30 +19,30 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
   const audio = new Audio("audio.mp3");
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleFullscreen = async () => {
-    if (document.fullscreenElement) {
-      await document.exitFullscreen();
-      setIsFullscreen(false);
-      audio.pause();
-    } else {
-      await document.documentElement.requestFullscreen();
-      setIsFullscreen(true);
-      controls.start({ opacity: 0 });
-      audio.loop = true;
-      audio.volume = 0.15;
-      if (audio.paused) {
-        audio.play();
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (!isFullscreen) {
-      setIsOpen(true);
-    } else {
-      setIsOpen(false);
-    }
-  }, [isFullscreen]);
+  //   const toggleFullscreen = async () => {
+  //     if (document.fullscreenElement) {
+  //       await document.exitFullscreen();
+  //       setIsFullscreen(false);
+  //       audio.pause();
+  //     } else {
+  //       await document.documentElement.requestFullscreen();
+  //       setIsFullscreen(true);
+  //       controls.start({ opacity: 0 });
+  //       audio.loop = true;
+  //       audio.volume = 0.15;
+  //       if (audio.paused) {
+  //         audio.play();
+  //       }
+  //     }
+  //   };
+  //
+  //   useEffect(() => {
+  //     if (!isFullscreen) {
+  //       setIsOpen(true);
+  //     } else {
+  //       setIsOpen(false);
+  //     }
+  //   }, [isFullscreen]);
 
   const Main = styled(motion.div)({
     position: "relative",
@@ -106,9 +106,16 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
 
   `);
 
+  const handleNext = () => {
+    audio.play();
+    // audio.loop();
+    // audio.volume()
+    router.push("/selection");
+  };
+
   return (
     <Main animate={controls} initial={{ opacity: 1 }}>
-      <StyledAlert
+      {/* <StyledAlert
         mode="ios"
         isOpen={isOpen}
         header="Change screen"
@@ -120,7 +127,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
           },
         ]}
         onDidDismiss={() => (toggleFullscreen(), setIsOpen(false))}
-      />
+      /> */}
       <GridWrapper>
         <RowWrapper>
           <ColStyle size="auto">
@@ -136,7 +143,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
                   whileHover={kuponHoverAnimation}
                   whileTap={kuponClickAnimation}
                   src="icon/start.png"
-                  onClick={() => router.push("/selection")}
+                  onClick={() => handleNext()}
                 />
               </ImgContainer>
             </div>
