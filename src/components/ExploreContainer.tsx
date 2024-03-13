@@ -108,8 +108,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
 
   const handleNext = () => {
     audio.play();
-    // audio.loop();
-    // audio.volume()
+    (audio.loop = true), (audio.volume = 0.6);
     router.push("/selection");
   };
 
